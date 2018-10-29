@@ -9,34 +9,34 @@
         android:layout_height="wrap_content"
         android:id="@+id/txtNomeAluno"
         android:text="Teste"
-        android:textSize="23dp"/>
+        android:textSize="23sp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtDtNasc"
         android:text="Teste"
-        android:textSize="20dp"/>
+        android:textSize="20sp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtMatricula"
         android:text="Teste"
-        android:textSize="20dp"/>
+        android:textSize="20sp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtCPF"
         android:text="Teste"
-        android:textSize="20dp"/>
+        android:textSize="20sp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtNotas"
         android:text="Teste"
-        android:textSize="20dp"/>
+        android:textSize="20sp"/>
 
 </LinearLayout>

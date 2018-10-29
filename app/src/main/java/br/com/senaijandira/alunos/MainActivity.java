@@ -2,60 +2,58 @@ package br.com.senaijandira.alunos;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import java.util.List;
 
+import br.com.senaijandira.alunos.adapter.AlunoAdapter;
 import br.com.senaijandira.alunos.model.Aluno;
-import br.com.senaijandira.alunos.services.AlunosService;
 import br.com.senaijandira.alunos.services.ServiceFactory;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MainView {
 
+    ProgressBar barra;
     ListView listaAlunos;
-    AlunosAdapter adapter;
+
+    AlunoAdapter adapter;
+    MainPresenter presenter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        barra = findViewById(R.id.progressBar);
+
         listaAlunos = findViewById(R.id.listaAlunos);
-        adapter = new AlunosAdapter(this);
+        adapter = new AlunoAdapter(this);
 
         listaAlunos.setAdapter(adapter);
+
+        //config presenter
+        presenter = new MainPresenter(this,
+                ServiceFactory.create());
+
+        presenter.carregarAlunos();
     }
 
-    public void chamarApi(View v) {
+    @Override
+    public void exibirBarraProgresso(){
+        barra.setVisibility(View.VISIBLE);
+        listaAlunos.setVisibility(View.GONE);
+    }
 
-        AlunosService service = ServiceFactory.create();
+    @Override
+    public void esconderBarraProgresso(){
+        barra.setVisibility(View.GONE);
+        listaAlunos.setVisibility(View.VISIBLE);
+    }
 
-        //chamada para a api
-        Call<List<Aluno>> call = service.obterAlunos();
-
-        //executa a chamada a API
-        call.enqueue(new Callback<List<Aluno>>() {
-            @Override
-            public void onResponse(Call<List<Aluno>> call, Response<List<Aluno>> response) {
-
-                List<Aluno> alunos = response.body();
-                adapter.clear();
-                for(Aluno a : alunos){
-
-                    adapter.add(a);
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<List<Aluno>> call, Throwable t) {
-                    Log.d("ERRO", t.getMessage());
-            }
-        });
+    @Override
+    public void preencherLista(List<Aluno> lstAlunos){
+        adapter.clear();
+        adapter.addAll(lstAlunos);
     }
 }

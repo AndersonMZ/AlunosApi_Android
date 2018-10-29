@@ -8,6 +8,8 @@ public class Aluno {
 
     private int id;
     private String nome;
+
+    //nome que tem na api
     @SerializedName("data_nascimento")
     private int dataNascimento;
     private int matricula;

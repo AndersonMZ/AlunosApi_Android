@@ -5,18 +5,16 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <Button
+    <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fazer chamada API"
-        android:id="@+id/btnChamarApi"
-        android:onClick="chamarApi"/>
+        android:id="@+id/progressBar"
+        android:visibility="gone"
+        android:layout_gravity="center"/>
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listaAlunos">
-
-    </ListView>
+        android:id="@+id/listaAlunos"/>
 
 </LinearLayout>

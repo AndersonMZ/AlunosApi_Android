@@ -1,4 +1,4 @@
-package br.com.senaijandira.alunos;
+package br.com.senaijandira.alunos.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -11,11 +11,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import br.com.senaijandira.alunos.R;
 import br.com.senaijandira.alunos.model.Aluno;
 
-public class AlunosAdapter extends ArrayAdapter<Aluno> {
+public class AlunoAdapter extends ArrayAdapter<Aluno> {
 
-    public AlunosAdapter(Context ctx){
+    public AlunoAdapter(Context ctx){
         super(ctx, 0 , new ArrayList<Aluno>());
     }
 
