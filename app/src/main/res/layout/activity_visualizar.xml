@@ -6,12 +6,84 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.VisualizarActivity"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:orientation="vertical">
 
-    <TextView
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nome"
-        android:id="@+id/txtNome"/>
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome"
+            android:textIsSelectable="true"
+            android:id="@+id/txtNome"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Data de Nascimento"
+            android:textIsSelectable="true"
+            android:id="@+id/txtDtNasc"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Matricula"
+            android:textIsSelectable="true"
+            android:id="@+id/txtMatricula"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="CPF"
+            android:textIsSelectable="true"
+            android:id="@+id/txtCPF"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Notas"
+            android:textIsSelectable="true"
+            android:id="@+id/txtNotas"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Média"
+            android:textIsSelectable="true"
+            android:id="@+id/txtMedia"/>
+    </android.support.design.widget.TextInputLayout>
 
 </LinearLayout>

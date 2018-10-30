@@ -18,12 +18,10 @@ import br.com.senaijandira.alunos.model.Aluno;
 import br.com.senaijandira.alunos.presenter.CadastroPresenter;
 import br.com.senaijandira.alunos.services.AlunosService;
 import br.com.senaijandira.alunos.services.ServiceFactory;
-import br.com.senaijandira.alunos.util.DateUtil;
+import br.com.senaijandira.alunos.util.DataUtil;
 import br.com.senaijandira.alunos.view.CadastroView;
 
-public class CadastroActivity
-        extends AppCompatActivity
-        implements CadastroView {
+public class CadastroActivity extends AppCompatActivity implements CadastroView {
 
     static EditText txtNome,txtDtNasc,txtMatricula, txtCpf;
 
@@ -69,7 +67,7 @@ public class CadastroActivity
         String matricula = txtMatricula.getText().toString();
         String cpf = txtCpf.getText().toString();
 
-        int dataFormatada = new DateUtil().toInt(dtNasc);
+        int dataFormatada = new DataUtil().formatarParaInt(dtNasc);
 
         Aluno aluno = new Aluno();
 

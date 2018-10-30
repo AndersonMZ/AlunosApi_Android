@@ -39,9 +39,7 @@ public class MainActivity extends AppCompatActivity implements MainView, Adapter
         listaAlunos.setOnItemClickListener(this);
 
         //config presenter
-        presenter = new MainPresenter(this,
-                ServiceFactory.create());
-
+        presenter = new MainPresenter(this, ServiceFactory.create());
     }
 
     @Override
