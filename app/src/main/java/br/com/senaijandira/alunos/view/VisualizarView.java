@@ -1,8 +1,8 @@
 package br.com.senaijandira.alunos.view;
 
-import br.com.senaijandira.alunos.model.AlunoMedia;
+import br.com.senaijandira.alunos.model.Aluno;
 
 public interface VisualizarView {
 
-    void preencherDados(AlunoMedia aluno);
+    void preencherDados(Aluno aluno);
 }

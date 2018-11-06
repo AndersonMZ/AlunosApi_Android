@@ -63,4 +63,23 @@ public class Aluno {
     public void setNotas(List<Double> notas) {
         this.notas = notas;
     }
+
+    public Double calcularMedia(){
+
+        if(this.notas != null && this.notas.size() > 0){
+
+            Double media;
+            Double soma = 0.0;
+
+            for(Double n: this.notas){
+                soma += n;
+            }
+
+            media = soma / this.notas.size();
+
+            return media;
+        }
+
+        return 0.0;
+    }
 }

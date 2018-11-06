@@ -3,10 +3,9 @@ package br.com.senaijandira.alunos.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import br.com.senaijandira.alunos.R;
-import br.com.senaijandira.alunos.model.AlunoMedia;
+import br.com.senaijandira.alunos.model.Aluno;
 import br.com.senaijandira.alunos.presenter.VisualizarPresenter;
 import br.com.senaijandira.alunos.services.AlunosService;
 import br.com.senaijandira.alunos.services.ServiceFactory;
@@ -43,7 +42,7 @@ public class VisualizarActivity extends AppCompatActivity implements VisualizarV
     }
 
     @Override
-    public void preencherDados(AlunoMedia aluno) {
+    public void preencherDados(Aluno aluno) {
         //recebe os dados do presenter e seta nos TextView
 
         String nome = aluno.getNome();
@@ -51,13 +50,13 @@ public class VisualizarActivity extends AppCompatActivity implements VisualizarV
         String matricula = String.valueOf(aluno.getMatricula());
         String cpf = aluno.getCpf();
         String notas = aluno.getNotas().toString();
-        String media = String.valueOf(aluno.getMedia());
+        String mediaStr = aluno.calcularMedia().toString();
 
         txtNome.setText(nome);
         txtDtNasc.setText(dtNasc);
         txtMatricula.setText(matricula);
         txtCpf.setText(cpf);
         txtNotas.setText(notas);
-        txtMedia.setText(media);
+        txtMedia.setText(mediaStr);
     }
 }

@@ -1,6 +1,6 @@
 package br.com.senaijandira.alunos.presenter;
 
-import br.com.senaijandira.alunos.model.AlunoMedia;
+import br.com.senaijandira.alunos.model.Aluno;
 import br.com.senaijandira.alunos.services.AlunosService;
 import br.com.senaijandira.alunos.view.VisualizarView;
 import retrofit2.Call;
@@ -19,16 +19,16 @@ public class VisualizarPresenter {
 
     public void requisitarDados(int idAluno){
 
-        service.obterMedia(idAluno).enqueue(new Callback<AlunoMedia>() {
+        service.obterAlunoId(idAluno).enqueue(new Callback<Aluno>() {
             @Override
-            public void onResponse(Call<AlunoMedia> call, Response<AlunoMedia> response) {
+            public void onResponse(Call<Aluno> call, Response<Aluno> response) {
 
                 view.preencherDados(response.body());
             }
 
             @Override
-            public void onFailure(Call<AlunoMedia> call, Throwable t) {
-
+            public void onFailure(Call<Aluno> call, Throwable t) {
+                t.printStackTrace();
             }
         });
     }
